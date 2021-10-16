@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="c2f-Fa-ZJW">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="75" id="c2f-Fa-ZJW" customClass="TaskTableViewCell" customModule="Tasks" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c2f-Fa-ZJW" id="dAu-6b-BmS">
@@ -25,19 +25,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPJ-pz-5Bc">
-                                            <rect key="frame" x="16" y="14.5" width="63" height="30"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
+                                            <rect key="frame" x="16" y="16.5" width="56" height="26.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="BPJ-pz-5Bc" secondAttribute="height" multiplier="55:26" id="mkf-sh-zb1"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14/10/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjc-c7-AYs">
-                                            <rect key="frame" x="19" y="44" width="57" height="14"/>
+                                            <rect key="frame" x="15.5" y="42.5" width="57" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="rjc-c7-AYs" secondAttribute="height" multiplier="57:14" id="Xca-cf-Qfr"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3O-AS-XFV">
-                                            <rect key="frame" x="88" y="7" width="2" height="61"/>
+                                            <rect key="frame" x="81" y="7" width="2" height="61"/>
                                             <color key="backgroundColor" systemColor="linkColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="61" id="Gqk-8A-2ff"/>
@@ -45,13 +51,13 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marketing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lq-Lr-eCf">
-                                            <rect key="frame" x="98" y="10" width="53" height="14"/>
+                                            <rect key="frame" x="91" y="10" width="53" height="14"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Essa task é uma task que eu estou fazendo para o meu aplicativo." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTj-k7-hFk">
-                                            <rect key="frame" x="98" y="23" width="296" height="35"/>
+                                            <rect key="frame" x="91" y="23" width="296" height="35"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -75,6 +81,13 @@
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9lq-Lr-eCf" secondAttribute="trailing" constant="263" id="yT4-IC-kaC"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelCategory" destination="9lq-Lr-eCf" id="Hnk-m1-2SJ"/>
+                                    <outlet property="labelDate" destination="rjc-c7-AYs" id="3CJ-Ap-vZ3"/>
+                                    <outlet property="labelHour" destination="BPJ-pz-5Bc" id="Mju-zj-yA5"/>
+                                    <outlet property="labelTaskDescription" destination="RTj-k7-hFk" id="dyz-9J-z5L"/>
+                                    <outlet property="viewCategory" destination="j3O-AS-XFV" id="5Cz-mR-H12"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
