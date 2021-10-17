@@ -134,9 +134,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="OZ6-au-oOr" secondAttribute="bottom" constant="8" id="Q3M-L7-Dip"/>
+                                        <constraint firstItem="OZ6-au-oOr" firstAttribute="top" secondItem="RAH-b1-X0d" secondAttribute="top" constant="8" id="eCE-AQ-GIc"/>
                                         <constraint firstAttribute="trailing" secondItem="OZ6-au-oOr" secondAttribute="trailing" constant="20" id="g5G-Er-xxg"/>
                                         <constraint firstItem="OZ6-au-oOr" firstAttribute="leading" secondItem="RAH-b1-X0d" secondAttribute="leading" constant="20" id="mgn-oD-GE5"/>
-                                        <constraint firstItem="OZ6-au-oOr" firstAttribute="top" secondItem="RAH-b1-X0d" secondAttribute="top" constant="8" id="prr-a3-QRd"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -184,7 +184,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="textFieldDateTime" destination="RWm-UL-JTj" id="dpm-oV-SCm"/>
+                                    <outlet property="textFieldDateTime" destination="RWm-UL-JTj" id="nlw-wv-VWC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -193,7 +193,13 @@
                             <outlet property="delegate" destination="ZYc-qA-Jwt" id="q5l-m9-NIv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Create Task" id="h7P-fb-4ju"/>
+                    <navigationItem key="navigationItem" title="Create Task" id="h7P-fb-4ju">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="bQZ-T2-3Tg">
+                            <connections>
+                                <action selector="tapSaveButton:" destination="ZYc-qA-Jwt" id="ykN-aV-7s4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ci-Zv-gD3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
