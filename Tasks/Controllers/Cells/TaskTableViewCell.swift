@@ -15,6 +15,4 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var labelTaskDescription: UILabel!
     @IBOutlet weak var viewCategory: UIView!
     
-    
-    
 }

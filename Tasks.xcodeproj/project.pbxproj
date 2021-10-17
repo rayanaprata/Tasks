@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		883524FD271CD9BF002C3EA6 /* DateTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883524FC271CD9BF002C3EA6 /* DateTimeTableViewCell.swift */; };
 		88A2BBF9271A632300E059C5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A2BBF8271A632300E059C5 /* Category.swift */; };
 		88A2BBFD271A667A00E059C5 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A2BBFC271A667A00E059C5 /* TaskTableViewCell.swift */; };
+		88A2BBFF271A6F8700E059C5 /* CreateTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A2BBFE271A6F8700E059C5 /* CreateTaskTableViewController.swift */; };
+		88A2BC01271A716500E059C5 /* TaskDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A2BC00271A716500E059C5 /* TaskDescriptionTableViewCell.swift */; };
 		88AED6E72718FB1B003EFB25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AED6E62718FB1B003EFB25 /* AppDelegate.swift */; };
 		88AED6E92718FB1B003EFB25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AED6E82718FB1B003EFB25 /* SceneDelegate.swift */; };
 		88AED6EE2718FB1B003EFB25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AED6EC2718FB1B003EFB25 /* Main.storyboard */; };
@@ -20,8 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		883524FC271CD9BF002C3EA6 /* DateTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeTableViewCell.swift; sourceTree = "<group>"; };
 		88A2BBF8271A632300E059C5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		88A2BBFC271A667A00E059C5 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		88A2BBFE271A6F8700E059C5 /* CreateTaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskTableViewController.swift; sourceTree = "<group>"; };
+		88A2BC00271A716500E059C5 /* TaskDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		88AED6E32718FB1B003EFB25 /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AED6E62718FB1B003EFB25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88AED6E82718FB1B003EFB25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				88A2BBFC271A667A00E059C5 /* TaskTableViewCell.swift */,
+				88A2BC00271A716500E059C5 /* TaskDescriptionTableViewCell.swift */,
+				883524FC271CD9BF002C3EA6 /* DateTimeTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -90,6 +98,7 @@
 			children = (
 				88A2BBFA271A664D00E059C5 /* Cells */,
 				88AED6FE2718FCE2003EFB25 /* MainTasksTableViewController.swift */,
+				88A2BBFE271A6F8700E059C5 /* CreateTaskTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,10 +183,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A2BC01271A716500E059C5 /* TaskDescriptionTableViewCell.swift in Sources */,
 				88A2BBFD271A667A00E059C5 /* TaskTableViewCell.swift in Sources */,
 				88AED6F12718FB1B003EFB25 /* Tasks.xcdatamodeld in Sources */,
 				88AED6E72718FB1B003EFB25 /* AppDelegate.swift in Sources */,
+				883524FD271CD9BF002C3EA6 /* DateTimeTableViewCell.swift in Sources */,
 				88AED7022719019D003EFB25 /* Task.swift in Sources */,
+				88A2BBFF271A6F8700E059C5 /* CreateTaskTableViewController.swift in Sources */,
 				88AED6E92718FB1B003EFB25 /* SceneDelegate.swift in Sources */,
 				88AED6FF2718FCE2003EFB25 /* MainTasksTableViewController.swift in Sources */,
 				88A2BBF9271A632300E059C5 /* Category.swift in Sources */,
