@@ -14,6 +14,7 @@ class CreateTaskTableViewController: UITableViewController, UITextFieldDelegate 
     private var selectedIntexPath: IndexPath?
     
     var task: Task = Task()
+    private var taskRepository = TaskRepository.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
