@@ -7,22 +7,19 @@
 
 import UIKit
 
-let work = Category(name: "Work", color: UIColor.green)
-let study = Category(name: "Study", color: UIColor.blue)
-let tasks: [Task] = [
-    Task(name: "Create presentation for tomorrow", date: Date(), category: work),
-    Task(name: "Call Janice about the substitute", date: Date(), category: work),
-    Task(name: "Study math for mt computer science class because it's too hard to understand Calculus and I need to study pretty hard to understand it!", date: Date(), category: study
-        )
-]
-
 class MainTasksTableViewController: UITableViewController {
 
     private var dateFormatter: DateFormatter = DateFormatter()
+    private var tasks: [Task] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.tasks = TaskRepository.instance.getTasks()
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

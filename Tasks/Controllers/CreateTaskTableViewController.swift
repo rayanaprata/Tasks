@@ -45,6 +45,7 @@ class CreateTaskTableViewController: UITableViewController, UITextFieldDelegate 
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TaskDescriptionCell", for: indexPath) as! TaskDescriptionTableViewCell
+            cell.textFieldTaskDescription.delegate = self
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
@@ -63,7 +64,8 @@ class CreateTaskTableViewController: UITableViewController, UITextFieldDelegate 
     // MARK: - Action Buttons
     
     @IBAction func tapSaveButton(_ sender: Any) {
-        print("Task Saved")
+        taskRepository.save(task: task)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - UITextFieldDelegate Methods
@@ -72,6 +74,10 @@ class CreateTaskTableViewController: UITableViewController, UITextFieldDelegate 
         if let dateCell = cell {
             self.selectedIntexPath = tableView.indexPath(for: dateCell)
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        self.task.name = textField.text!
     }
     
     // MARK: - UIView Functions
