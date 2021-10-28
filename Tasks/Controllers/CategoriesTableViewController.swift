@@ -9,6 +9,10 @@ import UIKit
 
 class CategoriesTableViewController: UITableViewController {
 
+    let categories = CategoryRepository.getCategories()
+    
+    var choosenCategory: ((Category) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,12 +25,20 @@ class CategoriesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return categories.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChooseCategoryCell", for: indexPath)
+        let category = categories[indexPath.row]
+        cell.textLabel?.text = category.name
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = categories[indexPath.row]
+        self.choosenCategory!(category)
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

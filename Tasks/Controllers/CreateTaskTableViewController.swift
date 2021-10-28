@@ -13,6 +13,8 @@ class CreateTaskTableViewController: UITableViewController, UITextFieldDelegate 
     private var dateFormatter = DateFormatter()
     private var selectedIntexPath: IndexPath?
     
+    var task: Task = Task()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +47,7 @@ class CreateTaskTableViewController: UITableViewController, UITextFieldDelegate 
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
+            cell.textLabel?.text = self.task.category.name
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DateCell", for: indexPath) as! DateTimeTableViewCell
@@ -92,7 +95,19 @@ class CreateTaskTableViewController: UITableViewController, UITextFieldDelegate 
             let cell = tableView.cellForRow(at: indexPath) as? DateTimeTableViewCell
             if let dateCell = cell {
                 dateCell.textFieldDateTime.text = dateFormatter.string(from: datePicker.date)
+                self.task.date = datePicker.date
                 self.view.endEditing(true)
+            }
+        }
+    }
+    
+    // MARK: Segue Methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToCategoriesTableViewController" {
+            let categoriesController = segue.destination as! CategoriesTableViewController
+            categoriesController.choosenCategory = { category in
+                self.task.category = category
+                self.tableView.reloadData()
             }
         }
     }
